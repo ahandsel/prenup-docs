@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(ai-commit)",
+      "Skill(blog-content-auditor)",
+      "Skill(blog-md-linter)",
+      "Skill(blog-translator)",
+      "Skill(file-folder-name-linter)",
+      "Skill(folder-readme-maintainer)",
+      "Skill(general-en-polisher)",
+      "Skill(gh-cli)",
+      "Skill(gh-issue-to-task)",
+      "Skill(gh-pr-reporter)",
+      "Skill(ja-to-en-translator)",
+      "Skill(link-polisher)",
+      "Skill(readme-maintainer)",
+      "Skill(script-auditor)",
+      "Skill(skill-allowlist-syncer)",
+      "WebFetch(domain:vitepress.dev)"
+    ]
+  }
+}
