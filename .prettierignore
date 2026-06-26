@@ -1,0 +1,8 @@
+# pnpm
+pnpm-lock.yaml
+
+# Ignore generated documentation structure file
+docs/contents-structure.md
+
+# Do not lint vendored agent skills
+.agents/skills/

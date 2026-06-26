@@ -1,0 +1,39 @@
+{
+  "[json]": {
+    "editor.defaultFormatter": "prettier.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.detectIndentation": false,
+  "editor.guides.bracketPairs": "active",
+  "editor.indentSize": "tabSize",
+  "editor.insertSpaces": true,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.tabSize": 2,
+  "files.associations": { "wrangler.json": "jsonc" },
+  "git.autofetch": true,
+  "chat.promptFilesLocations": { "prompts": true },
+  "japanese-proofreading.textlint.かっこ類と隣接する文字の間のスペースの有無": false,
+  "editor.defaultFormatter": "prettier.prettier-vscode",
+  "japanese-proofreading.textlint.全角文字と半角文字の間": false,
+  "japanese-proofreading.textlint.全角文字どうし": false,
+  "japanese-proofreading.textlint.ピリオドとカンマの使用（半角）": false,
+  "japanese-proofreading.textlint.丸かっこ（）": false,
+  "japanese-proofreading.textlint.大かっこ［］": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.wordWrap": "on",
+    "editor.fontFamily": "'HackGen Console', 'Sarasa Mono J', monospace"
+  },
+  "markdown.extension.italic.indicator": "*",
+  "markdown.extension.list.indentationSize": "inherit",
+  "markdown.extension.preview.autoShowPreviewToSide": false,
+  "markdown.extension.toc.levels": "2..4",
+  "markdown.extension.toc.unorderedList.marker": "*",
+  "markdown.extension.toc.updateOnSave": true,
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "markdown.validate.ignoredLinks": ["**/*.mp4", "**/*.png"],
+  "markdown.validate.referenceLinks.enabled": "ignore",
+  "markdownlint.run": "onSave"
+}

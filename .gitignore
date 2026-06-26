@@ -1,38 +1,43 @@
 # Dependencies
 node_modules/
-
-# VitePress build outputs and cache
-**/.vitepress/dist/
-**/.vitepress/cache/
-.cache/
-dist/
-
-# Caches
-.npm
 .pnpm-store/
 
-# Environment variables
+# VitePress build output & cache
+**/.vitepress/dist/
+**/.vitepress/cache/
+
+# Logs
+*.log
+markdown-lint-log.txt
+
+# Environment files
 .env
 .env.*
 !.env.example
 
-# Logs
-*.log
-npm-debug.log*
-pnpm-debug.log*
+# Private files
+private/
+private-**
+private.*
 
 # Temp files
+temp
+temp*.md
 temp.*
 temp-*
 .temp
-
-# Private files
-private/
-.secrets
-
-# npm pack output
-*.tgz
+*.temp
+**/temp.md
 
 # OS files
 .DS_Store
 Thumbs.db
+
+# Editor directories
+.idea/
+*.suo
+*.sln
+*.sw?
+
+# notes/
+notes/
