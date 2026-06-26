@@ -1,0 +1,123 @@
+# AGENTS.md
+
+`Prenup Docs` is a documentation site providing prenuptial agreement templates and guides for couples in Japan.
+
+Core topics:
+
+* How to discuss, draft, and finalize a prenuptial agreement.
+* Customizable templates couples can adapt to their situation.
+* Practical notes on related legal and financial considerations.
+
+This repository is not legal advice. Always consult a qualified professional before finalizing an agreement.
+
+
+## Localization
+
+Content is bilingual.
+Every file under `contents/en/` has a 1-to-1 counterpart under `contents/ja/` (same path below the language folder), holding the English and Japanese versions of the same page.
+
+By default, the content should be the same, just in their respective languages.
+
+Each content file declares its localization state in a `localization` frontmatter key:
+
+| Value           | Meaning                                                                          |
+| --------------- | -------------------------------------------------------------------------------- |
+| `sync`          | Default. The two versions are kept in 1-to-1 parity and should match in content. |
+| `TODO: drifted` | The two versions have diverged and requires updating.                            |
+| `independent`   | The two versions are intentionally different; do not sync them.                  |
+
+Rules when editing content:
+
+* Default new and existing paired files to `localization: sync`.
+* When you edit a `sync` file, flag its counterpart in the other language: set the counterpart's `localization` to `TODO: drifted` so the drift is tracked until it is reconciled.
+* Once a `TODO: drifted` file has been brought back in line with its counterpart, set both back to `sync`.
+* When the two language versions should be intentionally different, set `localization: independent` and do not flag drift between them.
+
+
+## Tech stack
+
+* Content: Markdown in `contents/`, with frontmatter for metadata and localization state.
+* Site generator: [VitePress][] (static site), with these plugins:
+  * `vitepress-sidebar` - automatic sidebar generation.
+  * `DavidingPlus/vitepress-image-viewer` - image zoom and captions.
+  * VitePress Mermaid Renderer - diagrams.
+  * `@nolebase/vitepress-plugin-enhanced-readabilities` - readability controls.
+  * `@nolebase/vitepress-plugin-meta` - meta tags.
+  * `@vite-pwa/vitepress` + `@vite-pwa/assets-generator` - PWA support.
+* Customization: `.mts`, `.ts`, `.mjs`, and Vue.
+* Lint: Prettier + markdownlint-cli2.
+* Package manager: `pnpm@11.6.0`.
+
+[VitePress]: https://vitepress.dev/
+
+
+## Common commands
+
+| Command        | What it does                                                           |
+| -------------- | --------------------------------------------------------------------- |
+| `pnpm dev`     | `vitepress dev contents` - start the dev server.                       |
+| `pnpm build`   | `vitepress build contents`.                                            |
+| `pnpm preview` | `vitepress preview contents`.                                          |
+| `pnpm check`   | `lint` + dev server (sanity check while editing).                      |
+| `pnpm lint`    | Prettier (`lint-code`) then markdownlint-cli2 `--fix` (`lint-md`).     |
+| `pnpm tree`    | Regenerate the doc structure via `scripts/generate-doc-structure.mjs`. |
+| `pnpm test`    | `tree` + `lint` + `build` + `preview` (used as the pre-merge check).   |
+| `pnpm index`   | List pnpm scripts via `scripts/index.sh`.                              |
+
+Run `pnpm tree` after adding or moving content so the generated structure stays in sync, then `pnpm lint` before finishing.
+
+
+## Style guides
+
+Writing, formatting, and translation conventions for this repository live in [docs/](./docs/).
+Consult them before authoring or editing content. See [docs/README.md](./docs/README.md) for the full index.
+
+* [General style guide - English](./docs/general-style-guide-english.md) / [Japanese](./docs/general-style-guide-japanese.md) - baseline writing rules (language, grammar, capitalization, punctuation, word usage).
+* [Technical style guide - English](./docs/technical-style-guide-english.md) / [Japanese](./docs/technical-style-guide-japanese.md) - documentation-specific rules (sentence structure, lists, procedural steps, alert banners).
+* [Help documentation overview](./docs/technical-doc-overview.md) - the four help document types and when to use each ([Diataxis](https://diataxis.fr/)).
+* [Markdown style guide](./docs/markdown-style-guide.md) - Markdown formatting (note banners, reference-style links).
+* [Git commit style guide](./docs/repo-commit-style-guide.md) - commit title, body, and emoji conventions.
+* [EN-JA translation glossary](./docs/glossary.yaml) - terminology reference.
+* [Document templates](./docs/templates/) - structure definitions and examples for how-to guides and reference documents.
+
+> These guides were imported from tokyo-geek and still carry travel-flavored examples and glossary terms. Tune them for prenup content over time.
+
+
+## AI tooling
+
+* `skills/` - Claude Code skills (symlinked at `.claude/skills`). See [skills/README.md](./skills/README.md). Allowed skills are listed in `.claude/settings.json`.
+* `prompts/` - reusable prompt files. See [prompts/README.md](./prompts/README.md).
+* `.codex/config.toml` - Codex CLI/IDE project defaults.
+* `.github/instructions/copilot-instructions.md` - GitHub Copilot instructions.
+
+
+## Conventions
+
+* Site config and theme tweaks live in `contents/.vitepress/config.mts` and `contents/.vitepress/theme/index.ts`. Plugins are wired there.
+* Never use en-dash or em-dash; always use a plain hyphen (`-`) instead.
+* Always use `pnpm` - never `npm`, `npx`, or `yarn`. The pnpm equivalents:
+  * `npm install` / `yarn add` → `pnpm add` (or `pnpm install` for the whole lockfile)
+  * `npm run <script>` / `yarn <script>` → `pnpm run <script>` (or `pnpm <script>`)
+  * `npm exec <bin>` → `pnpm exec <bin>`
+  * `npx <pkg>` → `pnpm dlx <pkg>`
+
+
+## Git commits
+
+* Never add a `Co-Authored-By` trailer.
+* Use the `ai-commit` skill to draft messages.
+
+
+## Scripts
+
+Default to creating scripts as Node.js ES modules (`.mjs`) or zsh for any new script tooling in this repo.
+
+* Do not use Python due to the overhead of managing Python environments and dependencies across different users' machines.
+* Default to Node.js for scripts that involve file system operations, string manipulation, or integration with JavaScript-based tools, as it provides a consistent runtime environment and leverages the strengths of the JavaScript ecosystem for build and automation tasks.
+* Use zsh for simple command sequences, environment setup, or when leveraging powerful shell features that would be more cumbersome to implement in Node.js.
+* Always include `--help` output for any script, and ensure it is clear and informative for users who may not be familiar with the script's functionality.
+* When writing scripts, always include a notes section near the top with:
+  * General notes - a brief description of what the script does.
+  * Usage - how to include or invoke the script.
+  * Output - what the script generates or returns.
+* For script outputs that are expected to be read by a user, use emojis to clarify messages and statuses, e.g. ✅ for success, ⚠️ for warnings, and ❌ for errors.
