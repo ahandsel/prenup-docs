@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# VitePress build outputs and cache
+**/.vitepress/dist/
+**/.vitepress/cache/
+.cache/
+dist/
+
+# Caches
+.npm
+.pnpm-store/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Temp files
+temp.*
+temp-*
+.temp
+
+# Private files
+private/
+.secrets
+
+# npm pack output
+*.tgz
+
+# OS files
+.DS_Store
+Thumbs.db
