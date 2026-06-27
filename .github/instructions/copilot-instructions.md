@@ -54,10 +54,13 @@ The document must include this front matter format:
 ---
 title: 'Document title'
 description: 'Brief description of the document.'
+text-on-image: false
+image: cover-image-filename.jpg
 head:
   - - meta
     - name: keywords
       content: sample, keywords
+localization: sync
 ---
 
 # {{$frontmatter.title}}
@@ -68,3 +71,5 @@ head:
 ```
 
 Use the title and description from the front matter as the first heading and introductory paragraph. Include `[[toc]]` after the introduction.
+
+The `image` key names a cover image stored in `contents/public/`, `text-on-image` controls the cover text overlay, and `localization` tracks bilingual parity (`sync`, `TODO: drifted`, or `independent`). See the [frontmatter style guide](../../docs/frontmatter-style-guide.md) for the full key reference.

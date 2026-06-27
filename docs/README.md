@@ -18,6 +18,7 @@ This folder contains all the writing style guides relevant for this repository, 
 * [Commit style guide](#commit-style-guide)
 * [Terminology and glossary](#terminology-and-glossary)
 * [Document templates](#document-templates)
+* [Theme notes](#theme-notes)
 * [Contents structure snapshot](#contents-structure-snapshot)
 
 
@@ -45,6 +46,7 @@ docs/
 ├── repo-commit-style-guide.md .......... Git commit title and body conventions
 ├── technical-doc-overview.md ........... Overview of help document types
 ├── glossary.yaml ....................... EN-JA translation glossary
+├── theme-notes.md ...................... VitePress theme build and ououe borrowings
 ├── contents-structure.md ............... Auto-generated tree snapshot of contents/
 └── templates/ .......................... Document structure templates
     ├── how-to-guides-template-structure.md
@@ -92,6 +94,11 @@ The [templates/](./templates) folder contains structure definitions and examples
 * [How-to guides - template structure](./templates/how-to-guides-template-structure.md) - Required section order and formatting rules for how-to guide documents.
 * [How-to guides - example](./templates/how-to-guides-example.md) - A sample how-to guide that demonstrates the template in practice.
 * [Reference document - template structure](./templates/reference-document-template-structure.md) - Required section order and formatting rules for reference documents.
+
+
+## Theme notes
+
+* [Theme notes](./theme-notes.md) - How the VitePress theme is built, which visual pieces are borrowed from the [vitepress-theme-ououe](https://github.com/tolking/vitepress-theme-ououe) blog theme and why it is not adopted wholesale, plus how the per-page cover images and reading-progress bar work.
 
 
 ## Contents structure snapshot
