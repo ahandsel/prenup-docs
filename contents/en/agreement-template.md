@@ -1,6 +1,8 @@
 ---
 title: Prenuptial agreement template
 description: A customizable prenuptial agreement template for couples in Japan, covering separate and shared property, living expenses, child-rearing, mutual pledges, and divorce provisions.
+text-on-image: false
+image: /sandy-millar-8vaQKYnawHw-unsplash.jpg
 head:
   - - meta
     - name: keywords
@@ -8,11 +10,7 @@ head:
 localization: sync
 ---
 
-# {{$frontmatter.title}}
-
-{{$frontmatter.description}}
-
----
+# {{ $frontmatter.title }}
 
 The two individuals entering into this marriage (one hereinafter referred to as "Party A" and the other as "Party B") agree as follows and conclude this agreement.
 
@@ -119,3 +117,5 @@ For any matter not provided for in this agreement, where doubt arises as to its 
 ## Article 14 (Amendment of the agreement)
 
 The provisions of this agreement may be amended only by the written agreement of all parties.
+
+Photo by [Sandy Millar](https://unsplash.com/@sandym10?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/gold-wedding-band-on-white-textile-8vaQKYnawHw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

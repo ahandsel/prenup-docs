@@ -1,12 +1,18 @@
 ---
 title: 婚前契約書
 description: 財産の区分、生活費の分担、子の養育、相互の誓約、離婚時の取り決めを定めた、日本のカップル向けにカスタマイズできる婚前契約書テンプレート。
+text-on-image: false
+image: /sandy-millar-8vaQKYnawHw-unsplash.jpg
 head:
   - - meta
     - name: keywords
       content: 婚前契約書，テンプレート，婚姻契約，財産，生活費，離婚，養育費，日本
 localization: sync
 ---
+
+# {{ $frontmatter.title }}
+
+{{ $frontmatter.description }}
 
 婚姻する二人 (一方を以下、「甲」といい、他方を以下、「乙」という) は、以下のとおり合意し本契約を締結する。
 
