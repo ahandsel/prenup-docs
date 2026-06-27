@@ -136,3 +136,58 @@
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
+
+/**
+ * vitepress-theme-ououe look (MIT, tolking)
+ *
+ * Visual touches borrowed from the ououe blog theme, adapted to run on top of
+ * VitePress's default theme (ououe itself is a full blog-theme replacement and
+ * is not used here).
+ * -------------------------------------------------------------------------- */
+
+:root {
+  /* Reading-progress bar (see VPReadingProgress.vue) */
+  --vp-reading-size: 3px;
+  --vp-reading-gradient: none;
+  --vp-reading-z-index: 100;
+
+  /* Per-page cover banner (see VPCover.vue) */
+  --vp-size-space: 0.7rem;
+  --vp-size-cover-height: 12rem;
+  --vp-size-cover-img-height: 18rem;
+  --vp-size-cover-blur: 7px;
+
+  /* Shared transition timing */
+  --vp-transition-duration: 0.25s;
+  --vp-transition-color: color var(--vp-transition-duration);
+  --vp-transition-all: all var(--vp-transition-duration);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --vp-transition-duration: 0s;
+  }
+}
+
+/* Smooth color transitions on interactive text, the ououe way */
+.vp-doc a,
+.VPNavBarMenuLink,
+.VPSidebarItem .link .text,
+.VPLink {
+  transition: var(--vp-transition-color);
+}
+
+/* Keep the appearance-toggle view transition neutral (ououe) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root),
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
+::view-transition-new(root),
+.dark::view-transition-old(root) {
+  z-index: 999999999;
+}
