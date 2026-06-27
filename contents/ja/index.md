@@ -2,25 +2,24 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
-title: 婚前契約書テンプレート
-titleTemplate: 日本のカップルのための婚前契約書テンプレートとガイド
+title: Prenup Docs
 
 hero:
-  name: '婚前契約書テンプレート'
-  tagline: 日本のカップルのための婚前契約書テンプレートとガイド
+  name: 'Prenup Docs'
+  tagline: 大切なことを、ようやく話し合う。<br> 婚前契約をいっしょに考えよう
+  image:
+    src: /love-cats.png
+    alt: 寄り添う 2 匹の猫
   actions:
-    - theme: brand
-      text: ガイド
-      link: /ja/guides/
+    # - theme: brand
+    #   text: ガイド
+    #   link: /ja/guides/
     - theme: alt
       text: English
       link: /
 
 features:
-  - title: 📘 ガイド
-    details: 婚前契約書の話し合い、作成、締結の進め方
-    link: /ja/guides/
   - title: 📝 テンプレート
-    details: 財産、生活費、子の養育、離婚時の取り決めをカバーした、編集できるテンプレート
+    details: 別産、共有財産、生活費、子の養育、離婚時の取り決めをカバーした、編集できるテンプレート
     link: /ja/agreement-template
 ---
