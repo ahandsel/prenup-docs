@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Skill(ai-commit)",
+      "Skill(avoid-ai-writing)",
       "Skill(blog-content-auditor)",
       "Skill(blog-md-linter)",
       "Skill(blog-translator)",
@@ -12,10 +13,13 @@
       "Skill(gh-issue-to-task)",
       "Skill(gh-pr-reporter)",
       "Skill(ja-to-en-translator)",
+      "Skill(ja-tech-writing)",
       "Skill(link-polisher)",
       "Skill(readme-maintainer)",
       "Skill(script-auditor)",
       "Skill(skill-allowlist-syncer)",
+      "Skill(text-proofreading)",
+      "Skill(thinking-first-draft)",
       "WebFetch(domain:vitepress.dev)"
     ]
   }
