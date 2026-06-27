@@ -2,8 +2,22 @@
 
 import { existsSync } from 'node:fs';
 
-import { defineConfig } from 'vitepress';
+import { defineConfig, type HeadConfig } from 'vitepress';
 import { withSidebar } from 'vitepress-sidebar';
+
+// Served from a project subpath on GitHub Pages; head asset URLs are not
+// base-prefixed automatically, so build them from this constant.
+const base = '/prenup-docs/';
+
+// Favicon and app-icon links, generated from contents/public/love-cats.png via
+// `pnpm exec pwa-assets-generator --config pwa-assets.config.mjs`.
+const head: HeadConfig[] = [
+  ['link', { rel: 'icon', href: `${base}favicon.ico`, sizes: '48x48' }],
+  [
+    'link',
+    { rel: 'apple-touch-icon', href: `${base}apple-touch-icon-180x180.png` },
+  ],
+];
 
 // https://vitepress.dev/reference/site-config
 const vitePressOptions = {
@@ -14,9 +28,12 @@ const vitePressOptions = {
   },
   title: 'Prenup Docs',
   titleTemplate: ':title - Prenup Docs',
-  description: 'Prenuptial agreement templates and guides for couples in Japan.',
+  description:
+    'Prenuptial agreement templates and guides for couples in Japan.',
 
   rewrites: { 'en/:rest*': ':rest*' },
+
+  head,
 
   lastUpdated: true,
   cleanUrls: true,
@@ -30,7 +47,8 @@ const vitePressOptions = {
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     footer: {
-      message: 'Prenuptial agreement templates and guides for couples in Japan.',
+      message:
+        'Prenuptial agreement templates and guides for couples in Japan.',
       copyright: 'Copyright © 2025-present',
     },
     outline: { level: [2, 3], label: 'Outline' },
@@ -85,7 +103,7 @@ const vitePressOptions = {
       text: 'Edit this page on GitHub',
     },
   },
-  base: '/prenup-docs/',
+  base,
   sitemap: {
     hostname: 'https://ahandsel.github.io',
   },
@@ -98,9 +116,16 @@ const vitePressOptions = {
       dir: 'ltr',
       themeConfig: {
         nav: [
-          { text: 'Home', link: '/' },
-          { text: 'Guides', link: '/guides/' },
-          { text: 'Templates', link: '/templates/' },
+          { text: 'Home  💍', link: '/' },
+          {
+            text: 'Tokyo-Geek  🗼',
+            link: 'https://ahandsel.github.io/tokyo-geek/',
+          },
+          {
+            text: 'Tokyo Hiker  🥾',
+            link: 'https://ahandsel.github.io/tokyo-hiker/',
+          },
+          { text: 'Copy in the Wild  ✍️', link: 'https://ahandsel.github.io/copy-in-the-wild/' },
         ],
       },
     },
@@ -110,9 +135,16 @@ const vitePressOptions = {
       dir: 'ltr',
       themeConfig: {
         nav: [
-          { text: 'ホーム', link: '/ja/' },
-          { text: 'ガイド', link: '/ja/guides/' },
-          { text: 'テンプレート', link: '/ja/templates/' },
+          { text: 'ホーム  💍', link: '/ja/' },
+          {
+            text: 'Tokyo-Geek  🗼',
+            link: 'https://ahandsel.github.io/tokyo-geek/',
+          },
+          {
+            text: 'Tokyo Hiker  🥾',
+            link: 'https://ahandsel.github.io/tokyo-hiker/',
+          },
+          { text: 'Copy in the Wild  ✍️', link: 'https://ahandsel.github.io/copy-in-the-wild/' },
         ],
       },
     },
