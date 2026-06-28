@@ -55,12 +55,14 @@ To use a skill, enter the skill's name in the AI interface (VS Code extension, t
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
 | [`file-folder-name-linter`][]  | Lints repository file and folder names against three fixed rules (`notes/` date prefix, `.yaml` not `.yml`, kebab-case) via `pnpm lint-naming`, with style-guide pointers for the reviewer.    | 2026-06-05 00:00   |
 | [`folder-readme-maintainer`][] | Audits the repository for missing or outdated folder `README.md` files and creates or updates them. Run after adding, moving, or renaming folder contents.                                     | 2026-06-09 00:00   |
+| [`gh-workflow-auditor`][]      | Audits GitHub Actions workflows: enforces the `.yaml` extension and Node.js 24, and upgrades pinned actions to the newest stable release that has aged past a 7-day supply-chain cool-down window (full-SHA pins, via `gh`). | 2026-06-29 00:00   |
 | [`readme-maintainer`][]        | Audits the repository for missing or outdated folder `README.md` files and creates or updates them.                                                                                            | 2026-06-03 04:16   |
 | [`script-auditor`][]           | Audits helper scripts in `scripts/` and `skills/*/scripts/` against the `AGENTS.md` script guidelines (no Python, prefer `.mjs` or zsh, require `--help`, a notes section, and status emojis). | 2026-06-04 01:36   |
 | [`skill-allowlist-syncer`][]   | Fully syncs the `Skill(<name>)` entries in `.claude/settings.json` under `permissions.allow` with the skills in the repo `skills/` folder, adding new skills and removing deleted ones.        | 2026-06-01 09:37   |
 
 [`file-folder-name-linter`]: ./file-folder-name-linter/SKILL.md
 [`folder-readme-maintainer`]: ./folder-readme-maintainer/SKILL.md
+[`gh-workflow-auditor`]: ./gh-workflow-auditor/SKILL.md
 [`readme-maintainer`]: ./readme-maintainer/SKILL.md
 [`script-auditor`]: ./script-auditor/SKILL.md
 [`skill-allowlist-syncer`]: ./skill-allowlist-syncer/SKILL.md
